@@ -1,0 +1,21 @@
+﻿@model Movie
+
+<h1>Edit @Model.Title</h1>
+<form asp-action="Movies" method="post">
+    <input type="hidden" asp-for="Id" value="@Model.Id" placeholder="@Model.Id" />
+    <br />
+
+    <label asp-for="Title"></label>
+    <input type="text" asp-for="Title" value="@Model.Title" placeholder="@Model.Title" />
+    <br />
+
+    <label asp-for="Genre"></label>
+    <input type="text" asp-for="Genre" value="@Model.Genre" placeholder="@Model.Genre" />
+    <br />
+
+    <label asp-for="Runtime"></label>
+    <input type="number" asp-for="Runtime" value="@Model.Runtime" placeholder="@Model.Runtime" />
+    <br />
+
+    <input type="submit" asp-action="SaveChanges" value="Save Changes" />
+</form>

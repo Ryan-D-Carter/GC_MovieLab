@@ -1,0 +1,33 @@
+﻿@model List<Movie>
+
+<a asp-action="Add"><button class="btn btn-primary">Add a Movie</button></a>
+
+<table class="table">
+    <tr>
+        <th>
+            Id
+        </th>
+        <th>
+            Title
+        </th>
+        <th>
+            Genre
+        </th>
+        <th>
+            Runtime
+        </th>
+    </tr>
+
+    @foreach (var movie in Model)
+    {
+        <tr>
+            <td>@movie.Id</td>
+            <td>@movie.Title</td>
+            <td>@movie.Genre</td>
+            <td>@movie.Runtime Minutes</td>
+            <td>@Html.ActionLink("Delete", "Delete", new { id = movie.Id })</td>
+            <td>@Html.ActionLink("Edit", "Edit", new { id = movie.Id })</td>
+        </tr>
+
+    }
+</table>
